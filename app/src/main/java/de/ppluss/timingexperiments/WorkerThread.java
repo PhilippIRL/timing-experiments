@@ -15,12 +15,10 @@ public class WorkerThread extends Thread {
 
     private Vibrator vibrator;
     private CameraManager cameraManager = null;
-    String cameraId;
+    private String cameraId;
 
     public WorkerThread(Context context) {
         this.context = context;
-
-        this.vibrator = (Vibrator) this.context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -46,7 +44,9 @@ public class WorkerThread extends Thread {
     }
 
     public void stopEverything() {
-        vibrator.cancel();
+        if(vibrator != null) {
+            vibrator.cancel();
+        }
         if(cameraManager != null) {
             try {
                 cameraManager.setTorchMode(cameraId, false);
@@ -66,6 +66,9 @@ public class WorkerThread extends Thread {
         }
 
         if(mode == 0) {
+            if(vibrator == null) {
+                vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+            }
             vibrator.vibrate(fireTime);
             sleep(fireTime);
             vibrator.cancel();

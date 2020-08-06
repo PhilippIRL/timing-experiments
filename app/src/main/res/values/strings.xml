@@ -12,5 +12,8 @@
     <string name="fireText">…for %1$d ms…</string>
     <string name="waitText">…then wait %1$d ms</string>
     <string name="loopBtn">Loop</string>
-    <string name="singleRunBtn">Single Run</string>
+    <string name="singleRunBtn">Run Once</string>
+    <string name="warningTitle">WARNING</string>
+    <string name="warningText">This app may potentially trigger seizures for people with photosensitive epilepsy if used in the flashlight mode. User discretion is advised.</string>
+    <string name="warningDismiss">Ok</string>
 </resources>

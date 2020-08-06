@@ -1,8 +1,12 @@
 package de.ppluss.timingexperiments;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mode = position;
+                workerThread.mode = position;
                 updateModeLabel();
             }
 
@@ -137,6 +142,17 @@ public class MainActivity extends AppCompatActivity {
                 workerThread.singleRun = true;
             }
         });
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.warningTitle)
+                .setMessage(R.string.warningText)
+                .setPositiveButton(R.string.warningDismiss, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
 
     }
 

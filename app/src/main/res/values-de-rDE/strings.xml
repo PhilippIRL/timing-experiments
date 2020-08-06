@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Timing Experiments</string>
+    <string-array name="modes">
+        <item>Vibration</item>
+        <item>Taschenlampe</item>
+    </string-array>
+    <string-array name="modesInText">
+        <item>den Vibrationsmotor</item>
+        <item>die Taschenlampe</item>
+    </string-array>
+    <string name="modeText">Löse %1$s…</string>
+    <string name="fireText">…für %1$d ms aus…</string>
+    <string name="waitText">…dann warte %1$d ms</string>
+    <string name="loopBtn">Wiederholen</string>
+    <string name="singleRunBtn">Einmal ausführen</string>
+    <string name="warningTitle">WARNUNG</string>
+    <string name="warningText">Diese App kann durch das schnelle Blinken der Taschenlampe potentiell epileptische Anfälle auslösen.</string>
+    <string name="warningDismiss">Okay</string>
+</resources>
